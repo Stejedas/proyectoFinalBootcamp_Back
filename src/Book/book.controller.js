@@ -16,7 +16,7 @@ export const AddBookCrtl = async (req, res) => {
         await changeStatusOfferBook(req.body.idOffer, change)
         const book = await createBook(newBook)
         sendConfirmBook(req.body.emailUser, req.body)
-        sendRatingEmail(req.body.emailUser, `http://localhost:3000/rate?nameRest=${req.body.emailRest}&idOffer=${req.body.idOffer}`)
+        sendRatingEmail(req.body.emailUser, `https://clinquant-taffy-da618e.netlify.app/rate?nameRest=${req.body.emailRest}&idOffer=${req.body.idOffer}`)
         res.json(book)
     
     } catch(err){

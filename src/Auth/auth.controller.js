@@ -24,7 +24,7 @@ export const registerCtrl = async ( req, res ) => {
             const token = generateValidationToken();
             await createValidationToken(token, req.body.email) // PASO 4 
            
-            sendValidationEmail(req.body.email, `http://localhost:3000/validate?token=${token}`)
+            sendValidationEmail(req.body.email, `https://clinquant-taffy-da618e.netlify.app/validate?token=${token}`)
             res.sendStatus(201) } else {
             res.sendStatus(409)
         }
